@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AnimalShow from "./AnimalShow";
+import "./App.css";
 
 function pickAnimal() {
   const animals = ["bird", "cat", "cow", "dog", "gator", "horse"];
@@ -20,9 +21,9 @@ function App() {
   });
 
   return (
-    <div>
-      <button onClick={handleOnClick}>Add Animals Emoji</button>
-      <h1> Animals Emoji = {renderedAnimals}</h1>
+    <div className="app">
+      <button onClick={handleOnClick}>Add Animals</button>
+      <div className="animal-list"> {renderedAnimals}</div>
     </div>
   );
 }

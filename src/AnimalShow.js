@@ -1,3 +1,4 @@
+import "./AnimalShow.css";
 import { useState } from "react";
 import bird from "./svg/bird.svg";
 import cat from "./svg/cat.svg";
@@ -24,14 +25,15 @@ function AnimalShow({ type }) {
   };
 
   return (
-    <div onClick={handleOnClick}>
-      <img src={svg[type]} alt="Animal" width={100} height={100} />
-      <img
-        src={heart}
-        alt="heart"
-        width={10 + 10 * count}
-        style={{ maxWidth: "100px" }}
-      />
+    <div className="animal-show" onClick={handleOnClick}>
+      <div>
+        <img className="animal" src={svg[type]} alt="Animal" />
+        <h3 className="animal-name">{type}</h3>
+      </div>
+      <div >
+        <img src={heart} alt="heart" width={30} className="heart" />
+        <h3 className="heart-count">{count}</h3>
+      </div>
     </div>
   );
 }
